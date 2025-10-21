@@ -1,0 +1,256 @@
+<!--
+  shesly-exume-portfolio.html
+  Plain HTML/CSS portfolio (no build tools). Drop this file in a GitHub repo named: shesly-exume.github.io
+  - Replace placeholder texts, images, and file links as noted below.
+  - For sharing PDFs: create an /assets/ folder in the repo and upload PDFs (e.g. assets/Bank-of-America.pdf)
+  - Then update the <a href> links in the Projects section to point to those files.
+
+  Quick upload steps:
+  1. Create a repository named exactly: shesly-exume.github.io
+  2. Add this file as index.html at the repo root.
+  3. (Optional) Create an assets/ folder, upload images & PDFs, and update links in the Projects cards.
+  4. Visit https://shesly-exume.github.io once GitHub Pages processes the repo.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shesly Exume — Learning & Development Portfolio</title>
+  <meta name="description" content="Shesly Exume — Learning & Development Professional | Training Design & Analytics" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --pink-1: #ff2d95; /* bold hot pink */
+      --pink-2: #ff6fb0; /* lighter accent */
+      --muted: #f8f5f7;
+      --text: #1d1d1f;
+      --card-shadow: 0 8px 30px rgba(255,45,149,0.08);
+      --glass: rgba(255,255,255,0.6);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--muted),#fff);color:var(--text);-webkit-font-smoothing:antialiased}
+    header{padding:28px 20px;display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--pink-1),var(--pink-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:20px;box-shadow:var(--card-shadow)}
+    h1{margin:0;font-size:20px}
+    p.lead{margin:0;color:#444;font-size:13px}
+    nav a{margin-left:18px;text-decoration:none;color:#444;font-weight:600}
+
+    .container{max-width:1100px;margin:28px auto;padding:0 20px}
+
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;padding:36px;background:white;border-radius:16px;box-shadow:var(--card-shadow)}
+    .hero h2{margin:0;font-size:28px;color:var(--pink-1)}
+    .hero p{margin-top:12px;color:#333;line-height:1.5}
+
+    .cta{margin-top:18px;display:flex;gap:12px}
+    .btn{padding:10px 16px;border-radius:12px;font-weight:700;border:0;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,var(--pink-1),var(--pink-2));color:white;box-shadow:0 8px 24px rgba(255,45,149,0.18)}
+    .btn-ghost{background:transparent;border:2px solid var(--pink-1);color:var(--pink-1)}
+
+    /* Projects */
+    .projects{margin-top:28px;display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .card{background:white;padding:18px;border-radius:14px;box-shadow:var(--card-shadow);display:flex;flex-direction:column;gap:12px}
+    .card h3{margin:0}
+    .card p{margin:0;color:#555;font-size:14px}
+    .card .meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .tag{font-size:12px;padding:6px 8px;border-radius:8px;background:linear-gradient(90deg,#fff,#fff);border:1px solid #f1e8ee;color:#333}
+    .card .actions{margin-top:8px;display:flex;gap:10px}
+    .small{font-size:13px;color:#666}
+
+    /* Skills + Contact */
+    .side{display:flex;flex-direction:column;gap:20px}
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    .skill-pill{background:linear-gradient(90deg,var(--pink-2),#ffd6e8);padding:8px 12px;border-radius:999px;font-weight:600}
+
+    footer{max-width:1100px;margin:28px auto 80px;padding:0 20px;color:#666;font-size:14px}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .projects{grid-template-columns:1fr}
+      header{padding:20px}
+    }
+
+    /* Utilities */
+    .muted{color:#777}
+    a.link{color:var(--pink-1);text-decoration:none;font-weight:700}
+
+    /* Accessibility tweaks */
+    a:focus, button:focus{outline:3px solid rgba(255,45,149,0.18);outline-offset:3px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">SE</div>
+      <div>
+        <h1>Shesly Exume</h1>
+        <p class="lead">Learning & Development Professional | Training Design & Analytics | Passionate about Growth and Engagement</p>
+      </div>
+    </div>
+    <nav aria-label="Main navigation">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <h2 id="hero-title">Designing learning that works — with measurable results</h2>
+        <p>I create training programs, dashboards, and learning experiences that drive engagement and performance. I combine instructional design, data analysis, and learner-centered design to make learning practical and memorable.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-ghost" href="mailto:your-email@example.com">Contact</a>
+        </div>
+      </div>
+
+      <aside class="side" aria-labelledby="skills">
+        <div class="card">
+          <h3 id="skills">Skills</h3>
+          <div class="skills">
+            <div class="skill-pill">Instructional Design</div>
+            <div class="skill-pill">LMS: Canvas / Moodle</div>
+            <div class="skill-pill">PowerPoint & eLearning</div>
+            <div class="skill-pill">Excel: PivotTables, XLOOKUP</div>
+            <div class="skill-pill">Learning Analytics</div>
+            <div class="skill-pill">Facilitation</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Contact</h3>
+          <p class="small">Email: <a class="link" href="mailto:your-email@example.com">your-email@example.com</a></p>
+          <p class="small">LinkedIn: <a class="link" href="#">linkedin.com/in/yourprofile</a></p>
+          <p class="small muted">Tip: Click project cards to open PDFs or view more details.</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" style="margin-top:28px">
+      <h2 style="color:var(--pink-1);margin-bottom:12px">Projects & Work Samples</h2>
+      <p class="muted">Click a project to open the file (or view the summary). Files can be uploaded to <code>/assets/</code> in this repo and linked below.</p>
+
+      <div class="projects">
+        <!-- Bank of America Project (Placeholder) -->
+        <article class="card" role="article" aria-labelledby="boa-title">
+          <div class="meta">
+            <div class="tag">Bank of America</div>
+            <div class="small">FTI Consulting — Training Tracker</div>
+          </div>
+          <h3 id="boa-title">Bank of America — Training Tracker & Roster Management</h3>
+          <p class="small">Overview: A training tracker designed to monitor completions, compliance, and cohort performance. Includes automated dashboards and data validation to keep rosters clean.</p>
+
+          <div class="actions">
+            <!-- Replace href with: assets/Bank-of-America.pdf after upload -->
+            <a class="btn btn-primary" href="assets/Bank-of-America.pdf" target="_blank" rel="noopener">Open PDF</a>
+            <a class="btn btn-ghost" href="#" onclick="openScreenshot(event,'boa')">View Screenshots</a>
+          </div>
+        </article>
+
+        <!-- USAA Project (Placeholder) -->
+        <article class="card" role="article" aria-labelledby="usaa-title">
+          <div class="meta">
+            <div class="tag">USAA</div>
+            <div class="small">FTI Consulting — Remote Learning Design</div>
+          </div>
+          <h3 id="usaa-title">USAA — Remote Agent Training Program</h3>
+          <p class="small">Overview: Designed instructor-led and self-paced modules, created assessments and performance dashboards to measure skill adoption.</p>
+          <div class="actions">
+            <!-- Replace href with: assets/USAA-Training.pdf after upload -->
+            <a class="btn btn-primary" href="assets/USAA-Training.pdf" target="_blank" rel="noopener">Open PDF</a>
+            <a class="btn btn-ghost" href="#" onclick="openScreenshot(event,'usaa')">View Screenshots</a>
+          </div>
+        </article>
+
+        <!-- Example: Learning Dashboard -->
+        <article class="card" role="article" aria-labelledby="dash-title">
+          <div class="meta">
+            <div class="tag">Dashboard</div>
+            <div class="small">Completion & Engagement</div>
+          </div>
+          <h3 id="dash-title">Learning Dashboard — Completion Trends</h3>
+          <p class="small">Overview: Dashboard showing completion rates over time, cohort comparisons, and intervention impact. Built with PivotTables and formulas for automation.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="assets/Learning-Dashboard.pdf" target="_blank" rel="noopener">Open PDF</a>
+            <a class="btn btn-ghost" href="#" onclick="openScreenshot(event,'dash')">View Screenshots</a>
+          </div>
+        </article>
+
+        <!-- Placeholder card for future upload -->
+        <article class="card" role="article" aria-labelledby="placeholder-title">
+          <div class="meta">
+            <div class="tag">Placeholder</div>
+            <div class="small">Add your next project</div>
+          </div>
+          <h3 id="placeholder-title">Add new work sample</h3>
+          <p class="small">Tip: Upload PDFs to <code>/assets/</code> and change the link on this card.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#">Edit</a>
+          </div>
+        </article>
+      </div>
+
+    </section>
+
+    <!-- Modal-like quick screenshot viewer (simple) -->
+    <div id="screenshotModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);align-items:center;justify-content:center;padding:20px">
+      <div style="max-width:900px;width:100%;background:white;padding:16px;border-radius:12px;position:relative">
+        <button aria-label="close" onclick="closeScreenshot()" style="position:absolute;right:10px;top:10px;border:0;background:transparent;font-size:18px">✕</button>
+        <div id="screenshotContent"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <strong>Shesly Exume</strong> — Learning & Development | Built with a bold pink theme for personality and clarity.</p>
+      <p>Need help updating files? Replace links in the Projects section with your uploaded PDFs in <code>/assets/</code>.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Small JS to show sample screenshots/content. Replace innerHTML with your images or text.
+    function openScreenshot(e, id){
+      e.preventDefault();
+      const modal = document.getElementById('screenshotModal');
+      const content = document.getElementById('screenshotContent');
+      let html = '';
+      if(id === 'boa'){
+        html = `
+          <h3>Bank of America — Key views</h3>
+          <p class="small muted">Screenshot placeholders — replace with real images by editing this file and adding image tags that point to <code>/assets/boa-1.png</code>, etc.</p>
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='420'%3E%3Crect width='100%25' height='100%25' fill='%23fff0f7'/%3E%3Ctext x='50%25' y='45%25' font-size='20' text-anchor='middle' fill='%23ff6fb0'%3EScreenshot%20placeholder%20(boa-1.png)%3C/text%3E%3C/svg%3E" alt="boa screenshot" style="max-width:100%;border-radius:8px;margin-top:12px" />
+        `;
+      } else if(id === 'usaa'){
+        html = `
+          <h3>USAA — Key views</h3>
+          <p class="small muted">Replace with screenshots: <code>/assets/usaa-1.png</code></p>
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='420'%3E%3Crect width='100%25' height='100%25' fill='%23fff7f0'/%3E%3Ctext x='50%25' y='45%25' font-size='20' text-anchor='middle' fill='%23ff2d95'%3EScreenshot%20placeholder%20(usaa-1.png)%3C/text%3E%3C/svg%3E" alt="usaa screenshot" style="max-width:100%;border-radius:8px;margin-top:12px" />
+        `;
+      } else if(id === 'dash'){
+        html = `
+          <h3>Learning Dashboard — Preview</h3>
+          <p class="small muted">Replace with a PNG export of your dashboard: <code>/assets/dashboard-1.png</code></p>
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='420'%3E%3Crect width='100%25' height='100%25' fill='%23fff3f6'/%3E%3Ctext x='50%25' y='45%25' font-size='20' text-anchor='middle' fill='%23ff2d95'%3EDashboard%20placeholder%20(dashboard-1.png)%3C/text%3E%3C/svg%3E" alt="dashboard screenshot" style="max-width:100%;border-radius:8px;margin-top:12px" />
+        `;
+      } else {
+        html = '<p>No preview available.</p>';
+      }
+      content.innerHTML = html;
+      modal.style.display = 'flex';
+    }
+    function closeScreenshot(){
+      document.getElementById('screenshotModal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
